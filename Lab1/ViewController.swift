@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var TheLabel: UILabel!
+    @IBOutlet weak var TheImageView: UIImageView!
+    @IBOutlet weak var TheActivityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +24,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func ButtonOneReact(_ sender: UIButton) {
+        TheLabel.text = "I did it!"
+    }
 
+    @IBAction func ButtonTwoReact(_ sender: UIButton) {
+        TheImageView.isHidden = false;
+    }
+    
+    @IBAction func ButtonThreeReact(_ sender: UIButton) {
+        if( TheActivityIndicator.isAnimating) {
+            TheActivityIndicator.stopAnimating()
+        }
+        else {
+            TheActivityIndicator.startAnimating()
+        }
+    }
 }
 
